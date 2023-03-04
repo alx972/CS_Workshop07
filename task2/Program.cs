@@ -21,6 +21,7 @@ int InputInt(string message) // ввод целого числа с клавиа
     Environment.Exit(1); // exit code программы при ошибке
     return 0; // функция возвращает 0, потому что надо что-то возвращать int
 }
+
 (int positionRow, int positionCol) InputPosition() // Ввод координат позиции в массиве human readable
 {
     int posRow = InputInt("Введите номер строки");

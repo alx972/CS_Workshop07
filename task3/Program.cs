@@ -25,7 +25,7 @@ int InputInt(string message) // ввод целого числа с клавиа
     return 0; // функция возвращает 0, потому что надо что-то возвращать int
 }
 
-bool ValidateMatrixParams(int row, int col)
+bool ValidateMatrixParams(int row, int col) // проверка на правильность размера матрицы
 {
     if (row > 0 && col > 0)
     {

@@ -6,11 +6,6 @@
 // 8 4 2 4
 // 1, 7 -> такого числа в массиве нет
 
-var INPUT = (ROWCOUNT:"Введите количество строк", COLCOUNT:"Введите количество столбцов", 
-            MINVALUE:"Введите минимальное значение массива", MAXVALUE:"Введите максимальное значение массива");
-var ERROR = (NOTINTVALUE:"Ошибка: введено не целое число", 
-            MATRIXERRORPARAMS:"Ошибка: введены недопустимые параметры матрицы");
-
 int InputInt(string message) // ввод целого числа с клавиатуры
 {
     Console.Write($"{message} -> ");
@@ -19,7 +14,7 @@ int InputInt(string message) // ввод целого числа с клавиа
     {
         return value;
     }
-    Console.WriteLine(ERROR.NOTINTVALUE);
+    Console.WriteLine("Ошибка: введено не целое число");
     Environment.Exit(1); // exit code программы при ошибке
     return 0; // функция возвращает 0, потому что надо что-то возвращать int
 }
@@ -37,7 +32,7 @@ bool ValidateMatrixParams(int row, int col) // проверка на прави�
     {
         return true;
     }
-    Console.WriteLine(ERROR.MATRIXERRORPARAMS);
+    Console.WriteLine("Ошибка: введены недопустимые параметры матрицы");
     Environment.Exit(1); // exit code программы при ошибке
     return false;
 }
@@ -80,11 +75,10 @@ void ShowMatrixPos(int[,] matrix, (int row, int col) pos) // Вывод на э�
         Console.WriteLine("Такого числа в массиве нет");
     }
 }
-
-int rowsCount = InputInt(INPUT.ROWCOUNT);
-int columnsCount = InputInt(INPUT.COLCOUNT);
-int minValue = InputInt(INPUT.MINVALUE);
-int maxValue = InputInt(INPUT.MAXVALUE);
+int rowsCount = InputInt("Введите количество строк");
+int columnsCount = InputInt("Введите количество столбцов");
+int minValue = InputInt("Введите минимальное значение массива");
+int maxValue = InputInt("Введите максимальное значение массива");
 
 if (ValidateMatrixParams(rowsCount, columnsCount))
 {
